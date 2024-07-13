@@ -1,0 +1,138 @@
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #text-display {
+            font-size: 10px;
+            color: red;
+        }
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+
+span:nth-child(even){
+	overflow: hidden;
+	letter-spacing: 0;
+	transition: 1s;
+}
+
+div:hover span:nth-child(even){
+	letter-spacing: -1em;
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+<div class="content">
+
+<marquee behavior="" direction="" style="color: white;height: 30px;font-size: x-large;background-color: #04AA6D;display: grid;">Text-Growing & Text-Shrinking</marquee>
+    <div style="height: 270px;overflow: hidden;"><p id="text-display" style="font-size: 10px;color: red;width: 350px;margin-left: 550px;margin-top: 50px;">Text-Growing</p>
+<p style="font-size: x-large;">The page includes a sidebar on the left and a content section on the right.In the content section, there is a "Text-Growing & Text-Shrinking" marquee at the top.
+    Below the marquee, there is a p element with the ID "text-display." This is the text that will change in size and color.The CSS in the style tag is used to style the sidebar and content sections. It ensures that the sidebar remains fixed on the left and adjusts its appearance for different screen sizes.
+</p></div><div><div style="margin-left: 450px;font-size: xx-large;">
+	<span>T</span><span>ext</span>
+	<span>G</span><span>owing & </span>
+	<span>S</span><span>hrinking</span>
+</div> 
+    </div>
+
+    <script>
+        const textElement = document.getElementById("text-display");
+        let fontSize = 10;
+        let growing = true;
+
+        function changeTextSize() {
+            if (growing) {
+                fontSize += 1;
+                textElement.style.fontSize = fontSize + "px";
+                if (fontSize >= 50) {
+                    textElement.textContent = "Text-Shrinking";
+                    textElement.style.color = "blue";
+                    growing = false;
+                }
+            } else {
+                fontSize -= 1;
+                textElement.style.fontSize = fontSize + "px";
+                if (fontSize <= 5) {
+                    textElement.textContent = "Text-Growing";
+                    textElement.style.color = "red";
+                    growing = true;
+                }
+            }
+        }
+
+        setInterval(changeTextSize, 100);
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>
+
