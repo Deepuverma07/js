@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <style>body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      
+      background-image: linear-gradient(rgb(151, 203, 230),white,rgb(161, 208, 230));
+  }
+  
+  .calculator {
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      background-image: linear-gradient(rgb(151, 203, 230),white,rgb(161, 208, 230));
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+      margin-top: 0;
+  }
+  
+  label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+  }
+  
+  input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+  }
+  
+  button {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      background-color: #c5e5f5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+  }
+  
+  #result {
+      font-size: 20px;
+      font-weight: bold;
+  }
+  #img{
+    margin-top: -150px;
+  }
+  </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Age Calculator</h1>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob">
+        <button onclick="calculateAge()">Calculate Age</button>
+        <div id="result"></div>
+    </div>
+    <img id="img" src="ages-removebg-preview.png" alt="">
+    <script>function calculateAge() {
+      const dobInput = document.getElementById('dob');
+      const resultContainer = document.getElementById('result');
+      const dob = new Date(dobInput.value);
+      const today = new Date();
+  
+      if (isNaN(dob)) {
+          resultContainer.textContent = 'Please enter a valid date of birth.';
+      } else {
+          const ageInMilliseconds = today - dob;
+          const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+          const age = Math.floor(ageInYears);
+          resultContainer.textContent = `Your age is  ${age} years.`;
+      }
+  }
+  </script>
+</body>
+</html>

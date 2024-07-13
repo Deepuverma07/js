@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scientific Calculator</title>
+  <!-- here I use css -->
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: linear-gradient(rgb(95, 91, 91),white,rgb(95, 91, 91));
+}
+#head{
+    background-color: ;
+}
+h1{
+    color: rgb(40, 36, 36,0.5);
+}
+
+.calculator {
+  width: 300px;
+  /* margin: 100px auto; */
+  margin-top: 100px;
+  margin-left: 900px;
+  padding: 20px;
+  background-color: rgb(95, 91, 91,0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+#display {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+  background-color:  #ecf6ed;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  background-color: rgb(27, 28, 27,0.1);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.number, .operator, .equals {
+  background-color:  rgb(27, 28, 27,0.6);
+}
+
+.function {
+  background-color: rgb(169, 150, 3,0.7);
+}
+
+button:hover {
+  background-color: #ded718;
+}
+
+button:active {
+  background-color: #357a3e;
+}
+#img{
+    margin-top: -500px;
+    margin-left: -900px;
+    height: 600px;
+}
+</style>
+</head>
+<body>
+    <header id="head"> </header>
+  <div class="calculator">
+    <h1>Calculator</h1>
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button class="number" onclick="appendToDisplay('7')">7</button>
+      <button class="number" onclick="appendToDisplay('8')">8</button>
+      <button class="number" onclick="appendToDisplay('9')">9</button>
+      <button class="operator" onclick="appendToDisplay('+')">+</button>
+      <button class="number" onclick="appendToDisplay('4')">4</button>
+      <button class="number" onclick="appendToDisplay('5')">5</button>
+      <button class="number" onclick="appendToDisplay('6')">6</button>
+      <button class="operator" onclick="appendToDisplay('-')">-</button>
+      <button class="number" onclick="appendToDisplay('1')">1</button>
+      <button class="number" onclick="appendToDisplay('2')">2</button>
+      <button class="number" onclick="appendToDisplay('3')">3</button>
+      <button class="operator" onclick="appendToDisplay('*')">*</button>
+      <button class="number" onclick="appendToDisplay('0')">0</button>
+      <button class="number" onclick="appendToDisplay('.')">.</button>
+      <button class="equals" onclick="calculate()">=</button>
+      <button class="operator" onclick="appendToDisplay('/')">/</button>
+      <button class="function" onclick="clearDisplay()">C</button>
+      <button class="function" onclick="calculateSquareRoot()">√</button>
+      <button class="function" onclick="calculatePower()">x^2</button>
+      <button class="function" onclick="calculateCube()">x^3</button>
+    </div>
+  </div>
+
+  <img id="img" src="images-removebg-preview.png" alt="">
+  <!-- start javascript -->
+  <script>
+    // This line of code gets a reference to an HTML element with the ID 'display'. The 'display' element is where the calculator's input and output will be shown.
+    let display = document.getElementById('display');
+    // This variable is used to store the current input that the user has typed into the calculator.
+let currentInput = '';
+// This function is called when a number or operator button is clicked. It appends the clicked value to the currentInput and updates the text displayed in the 'display' element.
+function appendToDisplay(value) {
+  currentInput += value;
+  display.value = currentInput;
+}
+// This function is called when the "C" (clear) button is clicked. It resets the currentInput variable to an empty string and clears the content displayed in the 'display' element.
+
+function clearDisplay() {
+  currentInput = '';
+  display.value = '';
+}
+// This function is called when the "=" (equals) button is clicked. It tries to evaluate the expression stored in currentInput using the eval() function. If the evaluation is successful, the result is displayed in the 'display' element. If there is an error during evaluation, it displays 'Error' in the 'display' element.
+function calculate() {
+  try {
+    currentInput = eval(currentInput);
+    display.value = currentInput;
+  } catch (error) {
+    display.value = 'Error';
+  }
+}
+// square root
+function calculateSquareRoot() {
+  try {
+    currentInput = Math.sqrt(eval(currentInput));
+    display.value = currentInput;
+  } catch (error) {
+    display.value = 'Error';
+  }
+}
+// power^2
+function calculatePower() {
+  try {
+    currentInput = Math.pow(eval(currentInput), 2);
+    display.value = currentInput;
+  } catch (error) {
+    display.value = 'Error';
+  }
+}
+
+// power cube
+function calculateCube() {
+  try {
+    currentInput = Math.pow(eval(currentInput), 3);
+    display.value = currentInput;
+  } catch (error) {
+    display.value = 'Error';
+  }
+}
+// The try...catch blocks are used in the calculation functions (calculate, calculateSquareRoot, calculatePower) to handle potential errors that might occur during the evaluation or mathematical operations. If an error occurs, the calculator displays 'Error' to indicate that there was a problem with the input.
+
+
+  </script>
+</body>
+</html>
