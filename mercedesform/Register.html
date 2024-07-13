@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(formbg.jpg); /* Replace 'background.jpg' with your image file */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+        }
+        #header{
+            background-color: black;
+            width: 450px;
+            margin-top: -30px;
+            height: 30px;
+        }
+        .container {
+            background: rgba(245, 240, 240, 0.8);
+            border-radius: 10px;
+            padding: 0px;
+            margin: -52px auto;
+            max-width: 450px;
+        }
+        .boxes
+        {
+            box-shadow: 5px 5px rgba(128, 128, 128, 0.545);
+            width:430px ;
+            margin-top: 15px;
+            height: 30px;
+            border-radius: 12px 12px 12px 12px;
+            border: none;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        h5{
+            margin-left: -300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+        
+        <li style="color: white;list-style-type: none;padding: 15px;font-size: small;">Mercedes me ID</li></div>
+        <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;font-size: x-large;">Create user account</h3>
+        <h4 style="margin-top: -15px;">Personal Data</h4>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <!-- <label for="username">Username:</label> -->
+            <input class="boxes" type="text" id="username" name="username" placeholder="User Name*"><br>
+    
+            <!-- <label for="password">Password:</label> -->
+            <input class="boxes" type="password" id="password" name="password" placeholder="Password*" ><br>
+    
+            <!-- <label for="firstName">First Name:</label> -->
+            <input class="boxes" type="text" id="firstName" name="firstName" placeholder="First Name*" ><br>
+    
+            <!-- <label for="lastName">Last Name:</label> -->
+            <input class="boxes" type="text" id="lastName" name="lastName" placeholder="Last Name*"><br>
+    
+            <!-- <label for="gender">Gender:</label> -->
+            <select class="boxes" id="gender" name="gender" placeholder="Gender*">
+                <option  value="Gender">Gender*</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>
+            <select class="boxes" id="Country" name="Country" placeholder="Country*">
+                <option  value="Country">Country*</option>
+                 <option value="Algeria">Algeria</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="Colombia">Colombia</option>
+                <option value="China">China</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Finland">Finland</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Jordan">Jordan</option>
+                <option value="India">India</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="United States of America">United States of America</option>
+               
+            </select><br>
+            
+            <select class="boxes" id="Language" name="Language" placeholder="Language*">
+                <option  value="Language">Language*</option>
+                 <option value="English">English</option>
+                 <option value="Hindi">Hindi</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="Greek">Greek</option>
+            </select><br>
+            
+            <!-- <label for="age">Age:</label> -->
+            <h5>* Mandatory fields</h5>
+            <input class="boxes" type="number" id="age" name="age" placeholder="Age"><br><br>
+    
+            <button type="submit" class="submit-button" onclick="validateForm()">Submit</button><br><br>
+        </form>
+    
+        <script>
+            function validateForm() {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const gender = document.getElementById('gender').value;
+                const age = document.getElementById('age').value;
+    
+                if (!username || !password || !firstName || !lastName || !gender || !age) {
+                    window.alert('Please fill out all the  fields.');
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    
+</body>
+</html>

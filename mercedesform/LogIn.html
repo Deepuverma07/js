@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stylish Form</title>
+    <style>
+        body {
+            background-image: url(formbg.jpg); /* Replace 'background.jpg' with your image file */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+        }
+        #header{
+            background-color: black;
+            width: 490px;
+            margin-left: -20px;
+            margin-top: -30px;
+            height: 30px;
+        }
+        .container {
+            background: rgba(231, 150, 150, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 100px auto;
+            max-width: 450px;
+        }
+
+     
+
+        .form-group {
+            margin: 10px 0;
+        }
+/* 
+        label {
+            display: block;
+            font-weight: bold;
+        } */
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .LogIn-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .LogIn-button:hover {
+            background-color: #0056b3;
+        }
+        .SignUp-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .SignUp-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body >
+    <div class="container">
+        <div id="header">
+        
+        <li style="color: white;list-style-type: none;padding: 15px;font-size: small;">Mercedes me ID</li></div>
+        <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;font-size: x-large;">Log In</h3>
+        <h5 style="margin-top: -15px;">Please enter your e-mail address or mobile phone number</h5>
+        <form>
+            
+            <div class="form-group">
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" id="email" name="email" placeholder="Email address / Phone number *" required>
+            </div>
+            <div class="form-group">
+                <!-- <label for="password">Password:</label> -->
+                <input type="password" id="password" name="password" placeholder="Password " required>
+            </div>
+            <button type="LogIn" class="LogIn-button">Log In</button>
+            <h5>Or</h5>
+            
+            <h6>Do you not yet have a Mercedes me ID?</h6>
+            <button type ="SignUp" class="SignUp-button"><a href="Register.html" style="color: white;text-decoration: none;">Sign Up</a></button>
+
+        </form>
+    </div>
+</body>
+</html>

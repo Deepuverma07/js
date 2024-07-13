@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background-image: url(formbg.jpg);  */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+        }
+        #header{
+            background-color: black;
+            width: 450px;
+            margin-top: -30px;
+            height: 30px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 0px;
+            margin: -52px auto;
+            max-width: 450px;
+        }
+        .boxes
+        {
+            /* box-shadow: 5px 5px rgba(128, 128, 128, 0.545); */
+            width:430px ;
+            margin-top: 15px;
+            height: 30px;
+            border-radius: 12px 12px 12px 12px;
+            border: none;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        h5{
+            margin-left: -300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+        
+        <li style="color: white;list-style-type: none;padding: 15px;font-size: small;">Mercedes me ID</li></div>
+        <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;font-size: x-large;">Create user account</h3>
+        <h4 style="margin-top: -15px;">Personal Data</h4>
+        <form id="registrationForm" >
+
+            <input class="boxes" type="text" id="username" name="username" placeholder="User Name*" required><br>
+
+            <input class="boxes" type="text" id="email" name="email" placeholder="Email*" required><br>
+    
+            <input class="boxes" type="password" id="password" name="password" placeholder="Password*" required><br>
+    
+            <input class="boxes" type="text" id="firstName" name="firstName" placeholder="First Name*" required><br>
+    
+            <input class="boxes" type="text" id="lastName" name="lastName" placeholder="Last Name*" required><br>
+    
+            <select class="boxes" id="gender" name="gender" placeholder="Gender*" required>
+                <option  value="Gender">Gender*</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>
+            <select class="boxes" id="Country" name="Country" placeholder="Country*" required>
+                <option  value="Country">Country*</option>
+                 <option value="Algeria">Algeria</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="Colombia">Colombia</option>
+                <option value="China">China</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Finland">Finland</option>
+                <option value="Hungary">Hungary</option>
+                <option value="Jordan">Jordan</option>
+                <option value="India">India</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="United States of America">United States of America</option>
+               
+            </select><br>
+            
+            <select class="boxes" id="Language" name="Language" placeholder="Language*" required>
+                <option  value="Language">Language*</option>
+                 <option value="English">English</option>
+                 <option value="Hindi">Hindi</option>
+                <option value="Finnish">Finnish</option>
+                <option value="French">French</option>
+                <option value="Greek">Greek</option>
+            </select><br>
+            
+            <h5>* Mandatory fields</h5>
+            <input class="boxes" type="number" id="age" name="age" placeholder="Age" required><br><br>
+    
+            <button type="submit" class="submit-button" >Submit</button><br><br>
+        </form>
+    <script>document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        // Prevent the form from submitting by default
+        event.preventDefault();
+      
+        // Get the values of the form fields
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var gender = document.getElementById("gender").value;
+        var Country = document.getElementById("Country").value;
+        var Language = document.getElementById("Language").value;
+        var Age = document.getElementById("Age").value;
+ 
+      
+        // Check if the name and email fields are empty
+        if (username.trim() === "" || email.trim() === "" || firstName.trim() === "" || lastName.trim() === "" || gender.trim() === ""|| Country.trim() === ""|| Language.trim() === ""|| Age.trim() === "" ) {
+          event.target.checkValidity();
+        //   ("Name and Email are required fields.");
+        } else {
+          // If not empty, you can submit the form or perform other actions here.
+          // For this example, we'll just display a success message.
+          alert("Form submitted successfully!");
+          // You can also submit the form programmatically if needed
+          // document.getElementById("myForm").submit();
+        }
+      });
+      </script>
+        
+</body>
+</html>
