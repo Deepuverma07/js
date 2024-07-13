@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Squares and Cubes</title>
+</head>
+<body >
+<div style="display: flex; justify-content: space-between; background-color: #cee0f9;"><div style="margin-top: -50px;"><p><center style="font-size: 100px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #93b9ee;"><b style="color:  rgb(96, 135, 219);">math</b>.com</center>
+<center style="font-size: 40px;"><b>The World of Math Online</b></center></p>  </div>
+<div style="margin-top: 20px;"><input type="text" placeholder="Search " style="width: 300px;border-color: rgb(96, 135, 219);border-width: 5px;text-align: end;font-size: 18px;"></div></div>
+
+<div style="margin-left: 500px;"><ul style="list-style: none;display: flex;">
+  <li class="list1"><u>Home</u> |</li>
+  <li style="margin-left: 20px;"><u> Teacher</u> |</li>
+  <li style="margin-left: 20px;"><u> Parents</u> |</li>
+  <li style="margin-left: 20px;"><u> Glossary</u> |</li>
+  <li style="margin-left: 20px;"><u> About Us</u> </li>
+  
+</ul></div>
+
+<center><div><button style="background-color: #cee0f9; border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px; width: 150px
+;"><b>Homework Help</b></button>
+<button style="background-color: #cee0f9; border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px;width: 150px
+;"><b>Practice</b></button>
+<button style="background-color: #cee0f9; border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px;width: 150px
+;"><b>Tutoring</b></button>
+<button style="background-color:rgb(96, 135, 219); border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px;width: 200px
+;"><b>Squares & Cube Roots</b></button>
+<button style="background-color: #cee0f9; border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px;width: 150px
+;"><b>Games</b></button>
+<button style="background-color: #cee0f9; border-color: rgb(96, 135, 219);border-width: 2px;border-radius: 12px 12px 0px 0px;width: 150px
+;"><b>Store</b></button></div></center>
+<hr style="background-color:rgb(96, 135, 219);height:20px;margin-top: -1px; border-color: rgb(96, 135, 219);">
+
+<div style="display: flex;"><div style="background-color: #cee0f9;width: 220px;height: 650px; border-radius: 0px 12px 0px 0px;"><div><h3 style="background-color: rgb(96, 135, 219); width: 220px;border-radius: 0px 12px 0px 0px;">Select Tool</h3>
+<div><ul style="font-size: large;list-style-type: disc; margin-left: -15px;"><li><u>Calculators</u></li>
+<li><u>Converters</u></li>
+<li><u>Equation Solvers</u></li>
+<li><u>Graphers</u></li></ul></div></div>
+<div><h3 style="background-color: rgb(96, 135, 219); width: 220px;border-radius: 0px 12px 0px 0px;">Resources</h3>
+  <div><ul style="font-size: large;list-style-type: disc; margin-left: -15px;"><li><u>Cool Tools</u></li>
+  <li><u>Formulas & tables</u></li>
+  <li><u>References</u></li>
+  <li><u>Test Preparation</u></li>
+<li><u>Study Tips</u></li>
+<li><u>Wonders of Math</u></li></ul></div></div>
+<div><h3 style="background-color: rgb(96, 135, 219); width: 220px;border-radius: 0px 12px 0px 0px; ">Search</h3></div>
+</div>
+
+<div style=" background-color: #cee0f9; width: 100%; border-radius: 12px; margin-left: 2px;">
+<div><br>
+  <p style="font-size: 40px; margin-top: -8px;">Square Root & Cube Roots</p></div>
+  
+  <div style="margin-left: 0px;">
+    <table border="1" style="height:400px;width: 300px; font-size: 20px; margin-top: 50px; margin-left: 20px;" >
+  <tr style="text-align: center; font-size: x-large;">
+    <th>Number</th>
+    <th>Square</th>
+    <th>Cube</th>
+  </tr>
+  
+</div>
+<script>
+  for (let i = 1; i <= 10; i++) 
+  {
+    const square = i * i;
+    const cube = i * i * i;
+    document.write(`
+    <tr style="text-align: center;">
+        <td>${i}</td>
+        <td>${square}</td>
+        <td>${cube}</td>
+      </tr>
+  `);
+  }
+</script>
+
+</table>
+
+<div style="margin-left: 650px;margin-top: -510px;">
+  <p style="font-size: 40px; margin-top: 15px;">Square & Cube Calculator</p><p style="font-size: 20px; margin-top: -36px;">You can check square root and cube root of any number</p><br><br>
+  <div style="background-image: linear-gradient(rgb(96, 135, 219),#cee0f9); width: 350px; height: 350px; margin-left: 45px;margin-top: -33px; ">
+    <form id="squareForm"><br>
+        <label for="number" style="font-size: 25px;"><center> <b>Enter a number</b></center></label><br>
+        <input type="number" id="number" required style="height: 30px;font-size: 25px; margin-left: 20px;"><br><br><br>
+        <button type="submit" style="margin-left: 20px; width: 315px;height: 45px; font-size: 25px; border-radius: 15px 0px 15px 0px;background-image: linear-gradient(#cee0f9,rgb(96, 135, 219));">Calculate Square</button></form><br><br>
+        <form id="cubeForm">
+        <button type="submit" style="margin-left: 20px; width: 315px;height: 45px;font-size: 25px;border-radius: 15px 0px 15px 0px;background-image: linear-gradient(#cee0f9,rgb(96, 135, 219));">Calculate Cube</button>
+      </form>
+    
+    <div id="result"></div>
+    <div id="result1"></div></div>
+
+    <script>
+        // Function to calculate and display the square
+        function calculateSquare(event) {
+            event.preventDefault();
+
+            // Get the input value
+            const numberInput = document.getElementById('number');
+            const number = parseFloat(numberInput.value);
+
+            // Check if the input is a valid number
+            if (!isNaN(number)) {
+                const square = number * number;
+                const resultElement = document.getElementById('result');
+                resultElement.textContent = `The square of ${number} is ${square}`;
+            } else {
+                alert('Please enter a valid number.');
+            }
+        }
+
+        // Add an event listener to the form
+        const squareForm = document.getElementById('squareForm');
+        squareForm.addEventListener('submit', calculateSquare);
+
+
+
+
+
+// cube calculate
+
+
+        function calculatecube(event) {
+            event.preventDefault();
+
+            // Get the input value
+            const numberInput = document.getElementById('number');
+            const number = parseFloat(numberInput.value);
+
+            // Check if the input is a valid number
+            if (!isNaN(number)) {
+                const cube = number * number * number;
+                const result1Element = document.getElementById('result1');
+                result1Element.textContent = `The cube of ${number} is ${cube}`;
+            } else {
+                alert('Please enter a valid number.');
+            }
+        }
+
+        // Add an event listener to the form
+        const cubeForm = document.getElementById('cubeForm');
+        cubeForm.addEventListener('submit', calculatecube);
+    </script>
+
+</div>
+
+
+  
+<br><br><br><br><br><br><br><br><br>
+<p style="margin-top: -24px;"><center><b>@2000-2023 Math.com.All rights reserved. <u>Legal Notices.</u> Please read our <u>Privacy Policy</u></b></center></p>
+</div>
+</body>
+</html>
