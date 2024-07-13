@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    
+
+
+* {box-sizing: border-box}
+body {font-family: Arial, Helvetica, sans-serif;background-image: url(puzzlebg.jpg);background-repeat: no-repeat;}
+h1, h2{
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#header{
+  background-image: linear-gradient(rgba(135, 207, 235, 0.497),white);
+}
+.navbar {
+  width: 100%;
+  
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+#line{
+  text-align: center;
+
+}
+
+#mydiv1 , #mydiv2, #mydiv3 , #mydiv4, #mydiv5, #mydiv6{
+  position: absolute;
+  z-index: 9;
+  
+  text-align: center;
+  
+}
+
+#mydivheader,#mydiv22header, #mydiv23header , #mydiv24header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+</style>
+</head>
+<body><div><div id="header"><h1>Program To Insert And Move Image On Screen</h1>
+    
+    <div class="navbar">
+      <a class="active" href="#">Home</a> 
+      <a href="#">Search</a> 
+      <a href="#">Contact</a> 
+      <a href="#">Login</a>
+    </div></div>
+    <h1> Puzzle</h1>
+    <h2>Hello Everyone!</h2>
+
+<p id="line"><b>Click and hold the mouse button down while moving the Puzzle <br>On your left hand side you have some images are ooverlap on each other you can take one by one and make your puzzle freely any place.  </b></p>
+
+<div id="mydiv1">
+  <!-- <div id="mydivheader">Click here to move</div> -->
+  <img src="a.png" alt="" style="width: 100px;"></div>
+</div>
+
+<div id="mydiv2">
+    <!-- <div id="mydiv22header">Click here to move</div> -->
+    <img src="b.png" alt="" style="width: 100px;"></div>
+<div id="mydiv3">
+    <!-- <div id="mydiv23header">Click here to move</div> -->
+    <img src="c.png" alt="" style="width: 100px;"></div>
+<div id="mydiv4">
+    <!-- <div id="mydiv24header">Click here to move</div> -->
+    <img src="e.png" alt="" style="width: 100px;"></div>
+<div id="mydiv5">
+    <!-- <div id="mydiv24header">Click here to move</div> -->
+    <img src="e.png" alt="" style="width: 100px;"></div>
+<div id="mydiv6">
+    <!-- <div id="mydiv24header">Click here to move</div> -->
+    <img src="e.png" alt="" style="width: 100px;"></div>
+
+    
+    <script>
+
+
+
+        //Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv1"));
+dragElement(document.getElementById("mydiv2"));
+dragElement(document.getElementById("mydiv3"));
+dragElement(document.getElementById("mydiv4"));
+dragElement(document.getElementById("mydiv5"));
+dragElement(document.getElementById("mydiv6"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+    </script>
+</body>
+</html>
